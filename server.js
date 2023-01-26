@@ -65,6 +65,10 @@ app.get('/api/checkHealth', (req, res, next) => {
 //   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 // });
 
+app.get("/", function (req, res) {
+  return res.send({"message": "Let's party!"});
+});
+
 
 app.listen(PORT, function () {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
