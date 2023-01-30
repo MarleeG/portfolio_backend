@@ -37,19 +37,19 @@ async function connectDatabase() {
 
 }
 
-// connectDatabase();
+connectDatabase();
 
 
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
-// app.use(projectRoutes);
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(projectRoutes);
 
 app.get("/", function (req, res) {
   return res.send({"message": "Let's party!"});
 });
 
 // health check
-app.get('/api/checkHealth', (req, res, next) => {
+app.get('/api/health', (req, res, next) => {
   return res.send({status: "ok"})}
 );
 
