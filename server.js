@@ -49,9 +49,9 @@ app.get("/", function (req, res) {
 });
 
 // health check
-// app.get('/api/checkHealth', (req, res, next) => {
-//   return res.send({status: "ok"})}
-// );
+app.get('/api/checkHealth', (req, res, next) => {
+  return res.send({status: "ok"})}
+);
 
 app.listen(PORT, function () {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
