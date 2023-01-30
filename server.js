@@ -44,12 +44,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(projectRoutes);
 
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
-
-
 app.get("/", function (req, res) {
   return res.send({"message": "Let's party!"});
 });
@@ -62,15 +56,3 @@ app.get('/api/checkHealth', (req, res, next) => {
 app.listen(PORT, function () {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
-
-// for SSL certificate
-// greenLock
-//   .init({
-//     packageRoot: __dirname,
-//     configDir: "./greenlock.d",
-//     // contact for security and critical bug notices
-//     maintainerEmail: "marleegerard@gmail.com",
-//     // whether or not to run at cloudscale
-//     cluster: false,
-//   })
-//   .serve(app);
