@@ -8,7 +8,8 @@
     "npm": "9.4.0"
   },
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start-service": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start": "./scripts/production_config.sh",
     "start:prod": "node server.js",
     "start:dev": "nodemon server.js"
   },

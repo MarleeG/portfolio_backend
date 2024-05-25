@@ -54,5 +54,5 @@ app.get('/api/health', (req, res, next) => {
 );
 
 app.listen(PORT, function () {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
+  console.log(`🌎 ==> API server now on port ${PORT}!\nEnvironment: ${process.env.NODE_ENV}`);
 });
