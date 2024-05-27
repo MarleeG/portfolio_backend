@@ -1,9 +1,17 @@
 "use strict";
+require("dotenv").config();
+// dependencies
 const express = require("express");
 const mongoose = require("mongoose");
-require("dotenv").config();
-const PORT = process.env.PORT || 3001;
+const cors = require('cors');
+
 const app = express();
+const PORT = process.env.PORT || 3001;
+
+app.use(cors({
+  origin: 'https://main.d4xzmzjmre0h4.amplifyapp.com', // Replace with your Amplify app domain
+}));
+
 const projectRoutes = require("./routes");
 
 
