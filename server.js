@@ -1,8 +1,9 @@
 "use strict";
 require("dotenv").config();
 // dependencies
-const express = require("express");
 const mongoose = require("mongoose");
+const express = require("express");
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -41,7 +42,30 @@ async function connectDatabase() {
 
 connectDatabase();
 
+// Define allowed origins
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://main.d4xzmzjmre0h4.amplifyapp.com/', // Add other allowed origins here
+];
 
+// Configure CORS
+const corsOptions = {
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      // If the origin is in the allowedOrigins array, allow the request
+      callback(null, true);
+    } else {
+      // If the origin is not in the allowedOrigins array, reject the request
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET'], // Specify allowed HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(projectRoutes);
