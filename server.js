@@ -60,8 +60,6 @@ async function connectDatabase() {
     await mongoose.connect(URI, {
       user,
       pass: password,
-    //   useNewUrlParser: true,
-    //   useUnifiedTopology: true,
     });
     console.log("Database connected!");
   } catch (err) {
@@ -81,7 +79,7 @@ const allowedOrigins = [
     'http://localhost:3000',
     'https://mgportfolioconnecticons.s3.us-east-1.amazonaws.com',
     'https://portfolio-frontend-zwjkpa.fly.dev',
-    'marlee-gerard-portfolio.dev'
+    'https://marlee-gerard-portfolio.fly.dev'
     // 'https://main.d4xzmzjmre0h4.amplifyapp.com', // Add other allowed origins here
     // 'https://marleegerard.com'
 ];
