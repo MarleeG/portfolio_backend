@@ -9,9 +9,9 @@
     "npm": "9.4.0"
   },
   "scripts": {
-    "start-service": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start-service": "cross-env NODE_OPTIONS=\"--enable-source-maps --trace-uncaught --unhandled-rejections=strict\" if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start": "./scripts/production_config.sh",
-    "start:prod": "node server.js",
+    "start:prod": "nodemon server.js",
     "start:dev": "nodemon server.js"
   },
   "keywords": [],
