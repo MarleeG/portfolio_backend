@@ -36,9 +36,14 @@ const getImageFromS3 = async (req, res, next) => {
 
     try {
         const data = await s3Client.send(new ListObjectsV2Command({ Bucket: params.Bucket }));
-        const imageUrls = await Promise.all(data.Contents.map(obj => generateSignedUrl(obj.Key, params.Bucket)));
+        if(data?.Contents){
+            const imageUrls = await Promise.all(data.Contents.map(obj => generateSignedUrl(obj.Key, params.Bucket)));
+            res.json({ imageUrls });
 
-        res.json({ imageUrls });
+        }else{
+            console.info(`NO IMAGES FOUND IN ${params.Bucket} S3 Bucket`);
+            res.json({ imageUrls: [] });
+        }
     } catch (err) {
         console.log(`an error has occured: ${err}`);
         next();
