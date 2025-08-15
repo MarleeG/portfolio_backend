@@ -17,10 +17,9 @@ primary_region = "iad"
     handlers = ["http"]
     port = 80
   [[services.ports]]
-    handlers = ["tls", "http"]
+    handlers = ["tls","http"]
     port = 443
 
-  # Optional but nice: basic health check hitting your existing endpoint
   [[services.http_checks]]
     path = "/api/health"
     method = "get"
