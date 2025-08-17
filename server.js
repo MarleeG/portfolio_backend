@@ -80,7 +80,8 @@ const allowedOrigins = [
     'https://mgportfolioconnecticons.s3.us-east-1.amazonaws.com',
     'https://portfolio-frontend-zwjkpa.fly.dev',
     'https://marlee-gerard-portfolio.fly.dev',
-    'https://marleegerard.com'
+    'https://marleegerard.com',
+    'https://mgportfolioimages.s3.us-east-1.amazonaws.com'
 ];
 
 // Configure CORS
