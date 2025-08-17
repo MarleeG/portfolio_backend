@@ -79,9 +79,8 @@ const allowedOrigins = [
     'http://localhost:3000',
     'https://mgportfolioconnecticons.s3.us-east-1.amazonaws.com',
     'https://portfolio-frontend-zwjkpa.fly.dev',
-    'https://marlee-gerard-portfolio.fly.dev'
-    // 'https://main.d4xzmzjmre0h4.amplifyapp.com', // Add other allowed origins here
-    // 'https://marleegerard.com'
+    'https://marlee-gerard-portfolio.fly.dev',
+    'https://marleegerard.com'
 ];
 
 // Configure CORS
