@@ -77,6 +77,8 @@ connectDatabase();
 // Define allowed origins
 const allowedOrigins = [
     'http://localhost:3000',
+    'http://localhost:8080',
+    'http://localhost:8081',
     'https://mgportfolioconnecticons.s3.us-east-1.amazonaws.com',
     'https://portfolio-frontend-zwjkpa.fly.dev',
     'https://marlee-gerard-portfolio.fly.dev',
