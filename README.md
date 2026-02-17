@@ -1,10 +1,10 @@
-# Backend for my Website Portfolio | Node.js Backend API
+# Backend for my Website Portfolio | NestJS Backend API
 
 These endpoints help me access my vital data in my database. 
 
 ## Description
 
-This project is a basic backend API built using Node.js and Express. It serves as a foundation for building more complex APIs.
+This project is a backend API built with NestJS (Node.js). It serves as the API for portfolio data and image URL generation.
 
 ## Installation
 

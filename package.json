@@ -2,35 +2,41 @@
   "name": "backend_website_portfolio",
   "version": "1.0.0",
   "description": "Portfolio Site",
-  "main": "server.js",
+  "main": "dist/main.js",
   "type": "commonjs",
   "engines": {
     "node": "18.13.0",
     "npm": "9.4.0"
   },
   "scripts": {
+    "build": "nest build",
     "start-service": "cross-env NODE_OPTIONS=\"--enable-source-maps --trace-uncaught --unhandled-rejections=strict\" if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start": "./scripts/production_config.sh",
-    "start:prod": "nodemon server.js",
-    "start:dev": "nodemon server.js"
+    "start:prod": "npm run build && node dist/main.js",
+    "start:dev": "nest start --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@nestjs/common": "^10.4.15",
+    "@nestjs/core": "^10.4.15",
+    "@nestjs/platform-express": "^10.4.15",
     "@aws-sdk/client-s3": "^3.583.0",
     "@aws-sdk/s3-request-presigner": "^3.583.0",
-    "concurrently": "^7.6.0",
-    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
-    "express": "^4.19.2",
     "helmet": "^7.1.0",
     "if-env": "^1.0.4",
     "mongoose": "^8.4.1",
-    "path": "^0.12.7",
-    "pm2": "^5.4.0"
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "@nestjs/cli": "^10.4.9",
+    "@types/node": "^20.16.13",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.6.3"
   }
 }
